@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        .container{
+            border: 2px solid red;
+            text-align: center;
+            position: relative;
+            top: 30px;
+        }
+        .notes{
+            border: 2px solid aqua;
+            border-radius: 8px;
+            padding: 10px;
+        }
+        button{
+            margin-top:10px;
+            padding: 7px 12px;
+            background-color: #408bcdfe;
+            color: #ffff;
+            
+        }
+        ol{
+            padding: 10px;
+            
+          }
+          
+          .notes-li{
+            display: flex;
+            position: relative;
+            
+            padding: 10px;
+            border: 2px solid aqua;
+            border-radius: 8px;
+            background-color: #ADD8E6;
+            flex-direction: column;
+            justify-content: center;
+            
+            margin: 10px 15px;
+            
+          }
+          .note-item{
+            font-weight: 1000;
+            border: 2px dashed;
+            border-radius: 10px;
+            padding: 5px 7px;
+            text-align: left;
+          }
+          .time{
+            font-weight: 900;
+            font-size: 12px;
+            justify-self: end;
+            align-self: flex-end;
+          }
+          .delete-class{
+            justify-self: end;
+            align-self: flex-end;
+          }
+    </style>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="container">
+        <h2 style="padding: 10px;"> Welcome {{cur_user.user_name}} </h2>
+       
+        {% for note in cur_user.notes %}
+        <div>
+            <ol>
+              <li>
+                <div class="notes-li">
+                    
+                     <p class="note-item">
+                        {{note.data}}
+                     </p>   
+                    
+                    <p class="time">{{note.date}}</p>
+
+                    <div class="delete-class">
+                      <button onClick="deleteNote({{ note.id }})">Delete</button>
+                    </div>
+                    
+                </div>
+               
+              </li>
+              
+            </ol>
+        </div>
+        {% endfor %}
+        
+
+        <form method="POST">
+          <div style="margin:10px">
+
+            <div>
+              <textarea class="notes" name="note" id="" cols="100" rows="5" placeholder="Enter notes"></textarea>
+          </div>
+          
+          <button>Save</button>
+
+          </div>
+        </form>
+    </div>
+
+    {% block javascript %}
+    <script type="text/javascript">
+      function deleteNote(noteId) {
+  fetch("/delete-note", {
+    method: "POST",
+    body: JSON.stringify({ noteId: noteId }),
+  }).then((_res) => {
+    window.location.href = "/";
+  });
+  }
+</script>
+{% endblock %}
+
+</body>
+</html>

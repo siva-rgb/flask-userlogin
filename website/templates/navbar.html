@@ -1,0 +1,68 @@
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: 'Courier New', Courier, monospace;
+        
+    }
+
+    .navbar {
+    background-color: #343a40;
+    border-radius: 4px;
+    
+  }
+  
+
+  .navbar ul {
+    overflow: auto;
+    padding: 10px
+  }
+
+  .navbar li {
+    float: left;
+    list-style-type: none;
+    margin: 3px 13px;
+    margin-top: 13px;
+    margin-bottom: 11px;
+  }
+  .navbar li a:hover {
+    color: white;
+  }
+  .navbar li a {
+    text-decoration: none;
+    padding: 3px 3px;
+    text-decoration: none;
+    color: #ffff;
+  }
+  .search {
+    float: right;
+    padding: 12px 75px;
+  }
+  #search {
+    border: 2px solid black;
+  }
+  </style>
+
+  <header>
+    <nav class="navbar">
+      <ul>
+        {% if cur_user.is_authenticated %}
+        <li><a href="/">Home</a></li>
+        <li><a href="/logout">Logout</a></li>
+        {% else %}
+        <li><a href="/login">Login</a></li>
+        <li><a href="/signup">Sign up</a></li>
+        {% endif %}
+        
+        <div class="search">
+          <input
+            type="text"
+            name="search"
+            id="search"
+            placeholder="Search..."
+          />
+        </div>
+      </ul>
+    </nav>
+  </header>
+

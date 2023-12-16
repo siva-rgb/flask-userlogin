@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+            
+        }
+        body{
+            background-color: #395886;
+        }
+        .container{
+            position: relative;
+            top: 40px;
+            /* border: 2px solid black; */
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+        .box{
+            box-shadow:  0px 1px 20px 0 rgb(72, 72, 72);
+            position: relative;
+            height: 400px;
+            width: 350px;
+            /* border: 2px solid red; */
+            border-radius: 10px;
+            background-color: #ffff;
+        }
+        .login-form{
+            padding: 10px;
+        }
+        .user-name{
+            /* background-color: aqua; */
+            padding: 14px;
+            margin-top: 50px;
+            margin-left: 10px;
+            margin-right: 10px;
+            text-align: center;
+        }
+        .user-name :nth-child(1){
+            font-weight: 900;
+            padding: 5px 7px;
+            width: 300px; /* Set the width of the input box */
+             /* Add padding for better appearance */
+            font-size: 16px; /* Set the font size */
+            border: 2px solid #3498db; /* Set a border with a color */
+            border-radius: 5px; /* Add rounded corners */
+            box-sizing: border-box;
+        }
+
+        .user-email{
+            /* background-color: aqua; */
+            padding: 14px;
+            margin-left: 10px;
+            margin-right: 10px;
+            text-align: center;
+        }
+        .user-email :nth-child(1){
+            font-weight: 900;
+            padding: 5px 7px;
+            width: 300px; /* Set the width of the input box */
+             /* Add padding for better appearance */
+            font-size: 16px; /* Set the font size */
+            border: 2px solid #3498db; /* Set a border with a color */
+            border-radius: 5px; /* Add rounded corners */
+            box-sizing: border-box;
+        }
+        
+
+        .password{
+            /* background-color: aqua; */
+            padding: 14px;
+            /* margin-bottom: 20px; */
+            margin-left: 10px;
+            margin-right: 10px;
+            text-align: center;
+        }
+        .password :nth-child(1){
+            font-weight: 900;
+            padding: 5px 7px;
+            width: 300px; /* Set the width of the input box */
+             /* Add padding for better appearance */
+            font-size: 16px; /* Set the font size */
+            border: 2px solid #3498db; /* Set a border with a color */
+            border-radius: 5px; /* Add rounded corners */
+            box-sizing: border-box;
+        }
+
+        .confirm-password{
+            /* background-color: aqua; */
+            padding: 14px;
+            margin-bottom: 15px;
+            margin-left: 10px;
+            margin-right: 10px;
+            text-align: center;
+        }
+        .confirm-password :nth-child(1){
+            font-weight: 900;
+            padding: 5px 7px;
+            width: 300px; /* Set the width of the input box */
+             /* Add padding for better appearance */
+            font-size: 16px; /* Set the font size */
+            border: 2px solid #3498db; /* Set a border with a color */
+            border-radius: 5px; /* Add rounded corners */
+            box-sizing: border-box;
+        }
+
+        .btn{
+            text-align: center;
+        }
+        button{
+            width: 100px;
+            padding: 5px 10px;
+            border-radius: 10px;
+            color: #ffff;
+            font-weight: 900;
+            background-color: #0ec9ea;
+        }
+        .btn a{
+            border: 2px solid black;
+            font-size: 12px;
+            padding:5px 10px ;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    {% include "navbar.html" %}
+    <main>
+        <div class="container">
+            <div class="box">
+                <div class="login-form">
+                    <h2>SignUp Form</h2>
+                </div>
+                <form action="" method="POST">
+
+                    <div class="user-name">
+                        <!-- <label for="">User Name:</label> -->
+                        <input type="text" name="username" id="" placeholder="Enter Username" required>
+                    </div>
+    
+                    <div class="user-email">
+                        <!-- <label for="">User Name:</label> -->
+                        <input type="text" name="email" id="" placeholder="Enter Email" required>
+                    </div>
+                    
+                    <div class="password">
+                        <!-- <label for="">Password:</label> -->
+                        <input type="text" name="password" id="" placeholder="Password" required>
+                    </div>
+    
+                    <div class="confirm-password">
+                        <!-- <label for="">Password:</label> -->
+                        <input type="text" name="confirm" id="" placeholder="Confirm Password" required>
+                    </div>
+                    
+                    <div class="btn">
+                        <button>Sign Up</button>
+                        <a href="">Login Page</a>
+                    </div>
+                </form>
+                
+                
+            </div>
+        </div>
+    </main>
+    
+</body>
+</html>

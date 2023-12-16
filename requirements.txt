@@ -1,0 +1,5 @@
+flask
+falsk_login
+flask_sqlalchemy
+gunicorn
+requests
